@@ -39,7 +39,7 @@
     <ProductName>EHLLAPI</ProductName>
     <PublisherName>Moonlay</PublisherName>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -98,10 +98,6 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="clsEHLLAPI">
-      <Name>clsEHLLAPI</Name>
-      <HintPath>..\clsEHLLAPI\bin\Debug\clsEHLLAPI.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -120,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CitiEHLLAPIWrapper.cs" />
     <Compile Include="clsfrmEHLLAPI_DEMO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="EHLLAPI_DEMO_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EHLLAPI\clsEHLLAPI.csproj">
+      <Project>{cb8124c7-c7f9-469c-b417-b1243439fedd}</Project>
+      <Name>clsEHLLAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

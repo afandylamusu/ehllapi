@@ -313,6 +313,7 @@ namespace EHLLAPI_DEMO
             this.Name = "frmEhllapi";
             this.Text = "Moonlay EHLLAPI";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmEhllapi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +351,7 @@ namespace EHLLAPI_DEMO
 
 		private void ReadStr_Click(object sender, System.EventArgs e)
 		{   string s;
-			EhllapiWrapper.ReadScreen(Convert.ToInt32(this.txtReadPos.Text),Convert.ToInt32(this.txtReadLen.Text),out s);
+            CitiEHLLAPIWrapper.ReadScreen(Convert.ToInt32(this.txtReadPos.Text),Convert.ToInt32(this.txtReadLen.Text),out s);
 			this.lblReadOut.Text=s;
 		}
 
@@ -365,6 +366,10 @@ namespace EHLLAPI_DEMO
 		  EhllapiWrapper.GetCursorPos(out p);
 		  this.txtCursorPos.Text=p.ToString();	
 		}
-		
-	}
+
+        private void frmEhllapi_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
